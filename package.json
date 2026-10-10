@@ -1,0 +1,16 @@
+{
+  "name": "dua-traders-website",
+  "version": "1.0.0",
+  "description": "DUA Traders Wholesale Food & Condiments Distributor Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "dua-traders",
+    "wholesale",
+    "ecommerce"
+  ],
+  "author": "DUA Traders",
+  "license": "ISC"
+}
