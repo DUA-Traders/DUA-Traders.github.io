@@ -20,5 +20,5 @@ Official website and digital wholesale catalog for **DUA Traders** (Bulk Orders 
 13. Delish Vinegar 4L Bottle
 
 ### Direct Inquiries & Ordering
-* **Phone**: [0316 3043274](tel:03163043274)
-* **WhatsApp**: [+92 316 3043274](https://wa.me/923163043274)
+* **Phone**: [0316 3043274](tel:03060824762)
+* **WhatsApp**: [+92 316 3043274](https://wa.me/923060824762)
