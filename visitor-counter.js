@@ -16,6 +16,7 @@
         },
         timezone: 'Asia/Karachi',
         onlineWindowMinutes: 5,
+        heartbeatIntervalMs: 5000,
         pollIntervalMs: 20000,
         countUpDurationMs: 1200
     };
@@ -223,14 +224,15 @@
             } catch (e) { }
         }
 
-        // Heartbeat every 45s while tab is open
+        // Heartbeat while tab is open
+        const heartbeatInterval = config.heartbeatIntervalMs || 45000;
         setInterval(() => {
             try {
                 let sessions = JSON.parse(localStorage.getItem(PRESENCE_STORAGE_KEY) || '{}');
                 sessions[state.tabId] = Date.now();
                 localStorage.setItem(PRESENCE_STORAGE_KEY, JSON.stringify(sessions));
             } catch (e) { }
-        }, 45000);
+        }, heartbeatInterval);
 
         // Remove tab on close / unload
         window.addEventListener('beforeunload', () => {
@@ -388,7 +390,8 @@
                     }
                 });
 
-                // Heartbeat ping every 45s while active
+                // Heartbeat ping while active
+                const fbHeartbeatInterval = config.heartbeatIntervalMs || 45000;
                 setInterval(() => {
                     if (!document.hidden) {
                         set(myPresenceRef, {
@@ -396,7 +399,7 @@
                             visitorId: state.visitorId
                         });
                     }
-                }, 45000);
+                }, fbHeartbeatInterval);
 
                 // Real-time listener for Presence (Online Visitors)
                 const presenceListRef = ref(db, 'dua_traders_presence');

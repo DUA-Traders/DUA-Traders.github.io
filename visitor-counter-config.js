@@ -45,11 +45,17 @@ window.VISITOR_COUNTER_CONFIG = {
     // Resets automatically at 00:00:00 PKT (Asia/Karachi, UTC+5)
     timezone: 'Asia/Karachi',
 
+
     // Activity window for online visitor calculation (in minutes)
-    onlineWindowMinutes: 5,
+    onlineWindowMinutes: 10 / 60,
+
+
+    // New: Send activity heartbeat every 5 seconds
+    heartbeatIntervalMs: 5000,
+
 
     // Polling interval for live automatic updates when in CountAPI mode (in milliseconds)
-    pollIntervalMs: 20000,
+    pollIntervalMs: 5000,
 
     // Smooth count-up animation duration (in milliseconds)
     countUpDurationMs: 1200
